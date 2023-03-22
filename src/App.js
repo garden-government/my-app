@@ -4,7 +4,7 @@ import ButtonFunctional from './Components/ButtonFunctional';
 import RangeFunctional from './Components/RangeFunctional';
 
 const test  = () => {
-  console.log(1234);
+  console.log(123);
 }
 
 const loadFile = () => {

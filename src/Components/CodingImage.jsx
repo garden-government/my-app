@@ -95,7 +95,7 @@ const CodingImage = () => {
         for (let i = 0; i < scane.data.length; i+=4){
             //console.log(123);
             scane.data[i] = Number(changeLastBit(scane.data[i], scaneHelp.data[i], byte));
-            scane.data[i + 1] = Number(changeLastBit(scane.data[i + 1], scaneHelp.data[i + i], byte));
+            scane.data[i + 1] = Number(changeLastBit(scane.data[i + 1], scaneHelp.data[i + 1], byte));
             scane.data[i + 2] = Number(changeLastBit(scane.data[i + 2], scaneHelp.data[i + 2], byte));
         }            
 

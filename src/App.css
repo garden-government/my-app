@@ -103,6 +103,21 @@ body{
   }
 }
 
+.sliderColor{
+  float: right;
+  -webkit-appearance: none;
+  border-radius: 5px;
+  outline: none;
+  width: 80%;
+  height: 10px;
+  background: #c5a6a6;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  margin-bottom: 3px;
+  margin-left: 3px;
+}
+
 .slider{
   -webkit-appearance: none;
   border-radius: 5px;
@@ -115,6 +130,29 @@ body{
   transition: opacity .2s;
   margin-bottom: 3px;
   margin-left: 3px;
+}
+
+
+.sliderColor:hover{
+  opacity:1;
+}
+
+.sliderColor::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background:#5c4146 ;
+  cursor: pointer;
+}
+
+.sliderColor::-moz-range-thumb{
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background:#5c4146 ;
+  cursor: pointer;
 }
 
 .slider:hover{
@@ -233,6 +271,10 @@ button:hover{
   animation: prixClipFix 2s linear infinite ;
 }
 
+.SlidersFun{
+  position: relative;
+}
+
 @keyframes rotate {
   100%   {transform: rotate(360deg)}
 }
@@ -245,15 +287,11 @@ button:hover{
     100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
 }
 .MainCanvas{
-  width: 80vh;
-  max-width: 500px;
-  height: auto;
+  margin: 0 auto;
 }
 .HelpCanvas{
   display: none;
-  width: 80vh;
-  max-width: 500px;
-  height: auto;
+  margin: 0 auto;
 }
 
 .App-header {

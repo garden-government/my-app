@@ -91,8 +91,9 @@ function App() {
         <LoadMainImage></LoadMainImage>
 
         <div className='FunctionalStyle'>
+          <div className='HeaderInfo'>Functional</div>
+          
           <div className='SlidersFun'>
-            <div className='HeaderInfo'>Functional</div>
             <RangeFunctional name="Red" nmd={0}></RangeFunctional>
             <RangeFunctional name="Grean" nmd={1}></RangeFunctional>
             <RangeFunctional name="Blue" nmd={2.}></RangeFunctional>

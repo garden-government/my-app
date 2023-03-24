@@ -28,7 +28,7 @@ const RangeFunctional = (props) => {
     return (
         <div>
             <label>{props.name}</label>
-            <input className="slider" type= "range" id= {props.name}  min={0} max={200}
+            <input className="sliderColor" type= "range" id= {props.name}  min={0} max={200}
             onChange={event => setValue(event.target.value)}></input>
         </div>
     );

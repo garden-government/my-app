@@ -29,8 +29,16 @@ const LoadMainImage = () => {
           const can = document.getElementById(idCanvas);
       
           const ctx = can.getContext("2d");
-          can.width = img.width;
-          can.height = img.height;
+
+          if (img.width>1000){
+            can.width=1000;
+            can.height=Math.trunc(img.height * (1000/img.width));
+          }
+          else{
+            can.width = img.width;
+            can.height = img.height;
+          }
+
       
           ctx.drawImage(img,0,0,can.width,can.height);
         }
@@ -38,11 +46,13 @@ const LoadMainImage = () => {
 
     return (
         <div className='LoadImage'>
-            <div>
-                <input type= "file" id= "loadInputFile" ></input>           
+            <div className='HeaderInfo'>Load image</div>
+            <div className="forLab">
+                <label className="lab">
+                    Load
+                    <input type= "file" id= "loadInputFile" onChange={loadFile}/>  
+                </label>      
             </div>
-
-            <button id= "loadImageBut" onClick={loadFile}>"Load"</button>
         </div>
     );
 };

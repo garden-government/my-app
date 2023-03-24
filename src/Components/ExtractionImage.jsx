@@ -1,8 +1,8 @@
-import React from "react";
+import React,{useState} from "react";
 
 const ExtractionImage = () => {
 
-    let byte = 6;
+    const[byte,setByte] = useState(2);
 
     function pow(number, stepen){
         let result = 1;
@@ -60,18 +60,20 @@ const ExtractionImage = () => {
         }            
 
         ctxMain.putImageData(scane,0,0);
-        //ctxHelp.putImageData(scane,0,0);
+        ctxHelp.putImageData(scane,0,0);
     }
 
 
     return (
         <div className='ExtractionImage'>
+            <div className='HeaderInfo'>Extraction image</div>
           <div>
             <label>Select number of bytes</label>
-            <input type= "range" id= "byteForExtraction" name= "byteForExtraction" defaultValue={0} min={0} max={8} step={1}></input>
+            <input  className="slider"  type= "range" id= "byteForExtraction" min={0} max={8} step={1}
+             value ={byte} onChange = {event => setByte(event.target.value)}></input>
           </div>
 
-          <button id= "extractionImageBut" onClick={ExtractionImage}>"Extraction"</button>
+          <button id= "extractionImageBut" onClick={ExtractionImage}>Extraction</button>
         </div>
     );
 };

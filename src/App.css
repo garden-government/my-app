@@ -1,22 +1,252 @@
+body{
+  background-color: #4e4e4e;
+}
+
 .App {
-  text-align: center;
+  margin: 0%;
 }
 
 .Functional{
+  overflow-y: scroll;
+  background-color: #6d6d6d;
+  height: 100vh;
+  width: 25% ;
+  min-width: 300px;
   position: fixed;
-  top: 10px;
-  right: 10px;
+  top: 0px;
+  right: 0px;
+  border-width: 10px;
+  border-color: #5c4146;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Header{
+  background-color: #818181;
+  text-align: center;
+  margin-top: 3%;
+  margin-left: 3%;
+  width: 94%;
+  display: flex;
+}
+.grt{
+  margin-top: 10px;
+  display: inline-flex;
+  position: relative;
+  padding: 0 5.5rem;
+}
+.ButLod{
+  margin-left: 130px;
+}
+.ButLod:hover{
+  margin: 5px 5px 5px 130px;
+  background-color: #f3e3e3;
+  border-radius: 5px;
+  border-width: 1px;
+  font-size: 15px;
+  font-family: 'Times New Roman', Times, serif;
+}
+.LoadImage{
+  background-color: #818181;
+  text-align: center;
+  margin-top: 3%;
+  margin-left: 3%;
+  width: 94%;
+}
+.NameProect{
+  margin: auto;
+  color: #230b0e;
+  font-weight: 5px;
+  font-size: 30px;
+  text-transform: uppercase;
+  
+  text-align: center;
+}
+
+.HeaderInfo{
+  padding-top: 5px;
+  padding-bottom: 15px;
+  color: #230b0e;
+  font-weight: 5px;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-top: 3%;
+  text-align: center;
+}
+
+.FunctionalStyle{
+  position: relative;
+  background-color: #818181;
+  text-align: center;
+  margin-top: 3%;
+  margin-left: 3%;
+  width: 94%;
+}
+
+.WriteImage{
+  background-color: #818181;
+  text-align: center;
+  margin-top: 3%;
+  margin-left: 3%;
+  width: 94%;
+}
+
+.ExtractionImage{
+  background-color: #818181;
+  text-align: center;
+  margin-top: 3%;
+  margin-left: 3%;
+  width: 94%;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+.slider{
+  -webkit-appearance: none;
+  border-radius: 5px;
+  outline: none;
+  width: 80%;
+  height: 10px;
+  background: #c5a6a6;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  margin-bottom: 3px;
+  margin-left: 3px;
+}
+
+.slider:hover{
+  opacity:1;
+}
+
+.slider::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background:#5c4146 ;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb{
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background:#5c4146 ;
+  cursor: pointer;
+}
+
+input[type="file"]{
+  margin: 5px;
+  display: none;
+}
+.lab{
+  text-align: center;
+  width: 70px;
+  height: 20px;
+  display: block;
+  cursor: pointer;
+  margin: 7px;
+  background-color: #c5a6a6;
+  border: 3px solid #000000;
+  border-radius: 5px;
+  border-width: 1px;
+  font-size: 15px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+button{
+  margin: 7px;
+  background-color: #c5a6a6;
+  border-radius: 5px;
+  border-width: 1px;
+  font-size: 15px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.ButtonFun{
+ display: flex;
+ align-content: center;
+}
+
+button:hover{
+  margin: 7px;
+  background-color: #f3e3e3;
+  border-radius: 5px;
+  border-width: 1px;
+  font-size: 15px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.inPut{
+  display: none;
+}
+
+
+.inPutLable{
+  display: flex;
+  font-weight: 700;
+  align-content: center;
+  margin: auto;
+  color: white;
+  height: 40px;
+  width: 20p0x;
+  background-color: #c5a6a6;
+  cursor:pointer;
+  padding:20px;
+  border-radius: 5px;
+  font-size: 15px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.inPut:focus + label,
+.inPut +  lable :hover{
+  background-color: #230b0e;
+}
+
+.loader {
+ /* display: none;*/
+  margin-left: 20%;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  position: relative;
+  animation: rotate 1s linear infinite
+}
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0px;
+  border-radius: 50%;
+  border: 5px solid #FFF;
+  animation: prixClipFix 2s linear infinite ;
+}
+
+@keyframes rotate {
+  100%   {transform: rotate(360deg)}
+}
+
+@keyframes prixClipFix {
+    0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+    25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+    50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+    75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
+    100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
+}
+.MainCanvas{
+  width: 80vh;
+  max-width: 500px;
+  height: auto;
+}
+.HelpCanvas{
+  display: none;
+  width: 80vh;
+  max-width: 500px;
+  height: auto;
 }
 
 .App-header {

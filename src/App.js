@@ -6,11 +6,26 @@ import RangeFunctional from './Components/RangeFunctional';
 import CodingImage from './Components/CodingImage';
 import ExtractionImage from './Components/ExtractionImage';
 
-function test  () {
-  console.log(1234);
+function clear  () {
+  const canMain = document.getElementById("mainCanvas");
+  const ctxMain = canMain.getContext("2d");
+  ctxMain.clearRect(0,0,canMain.width,canMain.height); 
+
+  const canHelp = document.getElementById("helpCanvas");
+  const ctxHelp = canHelp.getContext("2d");
+  ctxHelp.clearRect(0,0,canHelp.width,canHelp.height); 
 }
 
-function sliderRed (event) {
+function test  () {
+  const link = document.createElement('a'); 
+  link.download = 'download.png';
+  const canvas = document.getElementById("mainCanvas");
+  link.href = canvas.toDataURL();
+  link.click();
+  //link.delete;
+}
+
+function inversion () {
 
   const canMain = document.getElementById("mainCanvas");
   const ctxMain = canMain.getContext("2d");
@@ -18,27 +33,39 @@ function sliderRed (event) {
 
   const canHelp = document.getElementById("helpCanvas");
   const ctxHelp = canHelp.getContext("2d");
-  const scaneHelp = ctxHelp.getImageData(0,0,canHelp.width,canHelp.height);
 
-  let valueForChange = event.target.value;
-  
-  if(canMain.width === canHelp.width && canMain.height === canHelp.height){
-
-    for (let i  = 0; i < scane.data.length;i+=4){
-      //scane.data[i] = scaneHelp.data[i] * Number(valueForChange) / 100;
-      scane.data[i] = scaneHelp.data[i] * (Number(valueForChange)*2 )/ 100;
-    } 
-
-    console.log( Number(valueForChange))
-    
-  }
+  for (let i  = 0; i < scane.data.length;i+=4){
+    scane.data[i] = 255 - scane.data[i];
+    scane.data[i+1] = 255 - scane.data[i+1];
+    scane.data[i+2] = 255 - scane.data[i+2];
+  } 
 
   ctxMain.putImageData(scane,0,0);
+  ctxHelp.putImageData(scane,0,0);
 }
 
-function App() {
+function blackAndWhite () {
 
-  
+  const canMain = document.getElementById("mainCanvas");
+  const ctxMain = canMain.getContext("2d");
+  const scane = ctxMain.getImageData(0,0,canMain.width,canMain.height); 
+
+  const canHelp = document.getElementById("helpCanvas");
+  const ctxHelp = canHelp.getContext("2d");
+
+  for (let i  = 0; i < scane.data.length;i+=4){
+    let middleValue =  Math.trunc((scane.data[i] + scane.data[i+1] + scane.data[i+2])/3);
+    scane.data[i] = middleValue;
+    scane.data[i+1] = middleValue;
+    scane.data[i+2] = middleValue;
+  } 
+
+  ctxMain.putImageData(scane,0,0);
+  ctxHelp.putImageData(scane,0,0);
+}
+
+
+function App() {
 
   return (
     <div className="App">
@@ -58,27 +85,39 @@ function App() {
       <div className='Functional'> 
 
         <div className='Header'>
-          <div className = "name">PHOTOSHOP</div>
-          <div className = "info">INFO</div>
+          <div className = "NameProect" >PHOTOSHOP</div>
         </div>
 
         <LoadMainImage></LoadMainImage>
 
-        <div className='Sliders'>
-          <RangeFunctional id = "Red" max={30} min={0} defoult={10} title = "Red"  functional={test}></RangeFunctional>
+        <div className='FunctionalStyle'>
+          <div className='SlidersFun'>
+            <div className='HeaderInfo'>Functional</div>
+            <RangeFunctional name="Red" nmd={0}></RangeFunctional>
+            <RangeFunctional name="Grean" nmd={1}></RangeFunctional>
+            <RangeFunctional name="Blue" nmd={2.}></RangeFunctional>
+          </div>
+
+          <div className='ButtonFun'>
+            <ButtonFunctional idv = "inversion" title = "Inversion" functional={inversion}/>
+            <ButtonFunctional idv = "blackAndWhite" title = "Not colour" functional={blackAndWhite}/>
+          </div>
         </div>
 
         <CodingImage></CodingImage>
 
         <ExtractionImage></ExtractionImage>
 
-        <div className='Save'>
-          <ButtonFunctional idv = "saveBut" title = "Save image" functional={test}/>
+        <div className='grt'>
+          <div className='Save'>
+            <ButtonFunctional idv = "saveBut" title = "Save" functional={test}/>
+          </div>
+
+          <div className='Clear'>
+            <ButtonFunctional idv = "saveClear" title = "Clear" functional={clear}/>
+          </div>
         </div>
 
-        <div className='Clear'>
-          <ButtonFunctional idv = "saveClear" title = "Clear canvas" functional={test}/>
-        </div>
       </div>
     </div>
   );

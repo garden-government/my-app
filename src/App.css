@@ -143,13 +143,20 @@ input[type="file"]{
   margin: 5px;
   display: none;
 }
+
+.forLab{
+  width: 30%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
 .lab{
   text-align: center;
   width: 70px;
   height: 20px;
   display: block;
   cursor: pointer;
-  margin: 7px;
+  margin: 0px 7px 7px 7px;
   background-color: #c5a6a6;
   border: 3px solid #000000;
   border-radius: 5px;

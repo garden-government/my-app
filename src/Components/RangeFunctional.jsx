@@ -16,15 +16,10 @@ const RangeFunctional = (props) => {
         for (let i  = 0; i < scane.data.length;i+=4){
         scane.data[i+Number(props.nmd)] = scaneHelp.data[i+Number(props.nmd)] * (Number(valueCoulor) )/ 100;
         } 
+        
         ctxMain.putImageData(scane,0,0);
     })
 
-      /*
-<div>
-            <label>{name}</label>
-            <input type= "range" id= {name}  min={0} max={200}
-            onChange={event => setValue(event.target.value)} value= {valueCoulor}></input>
-        </div>*/
     return (
         <div>
             <label>{props.name}</label>

@@ -2,6 +2,19 @@ body{
   background-color: #4e4e4e;
 }
 
+.WorkArea{
+  height: 100vh;
+  width: 75% ;
+}
+.MainCanvas{
+  position: relative;
+  left: 50%;
+  transform: translate(-50%,0);
+}
+.HelpCanvas{
+  display: none;
+  margin: 0 auto;
+}
 .App {
   margin: 0%;
 }
@@ -27,12 +40,7 @@ body{
   width: 94%;
   display: flex;
 }
-.grt{
-  margin-top: 10px;
-  display: inline-flex;
-  position: relative;
-  padding: 0 5.5rem;
-}
+
 .ButLod{
   margin-left: 130px;
 }
@@ -117,7 +125,11 @@ body{
   margin-bottom: 3px;
   margin-left: 3px;
 }
-
+.ButtonFun{
+  position: relative;
+  left: 50%;
+  transform: translate(-50%,0);
+}
 .slider{
   -webkit-appearance: none;
   border-radius: 5px;
@@ -212,11 +224,6 @@ button{
   font-family: 'Times New Roman', Times, serif;
 }
 
-.ButtonFun{
- display: flex;
- align-content: center;
-}
-
 button:hover{
   margin: 7px;
   background-color: #f3e3e3;
@@ -286,13 +293,7 @@ button:hover{
     75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
     100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
 }
-.MainCanvas{
-  margin: 0 auto;
-}
-.HelpCanvas{
-  display: none;
-  margin: 0 auto;
-}
+
 
 .App-header {
   background-color: #282c34;

@@ -18,6 +18,7 @@ const CodingImage = () => {
         } catch (error) {
             console.log("No chosen file")
         }
+
     }
 
     function loadImage(srcImage, idCanvas){
@@ -110,6 +111,7 @@ const CodingImage = () => {
     return (
         <div className='WriteImage'>
             <div className='HeaderInfo'>Coding image</div>
+            
             <div className="forLab">
                 <label className="lab">
                     Load
@@ -117,12 +119,11 @@ const CodingImage = () => {
                 </label>      
             </div>
  
-
-          <div>
-            <label>Select number of bytes: {byte}</label>
-            <input className="slider" type= "range" id= "byteForWrite"min={0} max={8} step={1} 
-            value ={byte} onChange = {event => setByte(event.target.value)}></input>         
-          </div>
+            <div>
+                <label>Select number of bytes: {byte}</label>
+                <input className="slider" type= "range" id= "byteForWrite"min={0} max={8} step={1} 
+                value ={byte} onChange = {event => setByte(event.target.value)}></input>         
+            </div>
 
             <button id= "loadImageBut2" onClick={loadFile} >Start coding</button>
         </div>

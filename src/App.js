@@ -16,17 +16,15 @@ function clear  () {
   ctxHelp.clearRect(0,0,canHelp.width,canHelp.height); 
 }
 
-function test  () {
+function save  () {
   const link = document.createElement('a'); 
   link.download = 'download.png';
   const canvas = document.getElementById("mainCanvas");
   link.href = canvas.toDataURL();
   link.click();
-  //link.delete;
 }
 
 function inversion () {
-
   const canMain = document.getElementById("mainCanvas");
   const ctxMain = canMain.getContext("2d");
   const scane = ctxMain.getImageData(0,0,canMain.width,canMain.height); 
@@ -45,7 +43,6 @@ function inversion () {
 }
 
 function blackAndWhite () {
-
   const canMain = document.getElementById("mainCanvas");
   const ctxMain = canMain.getContext("2d");
   const scane = ctxMain.getImageData(0,0,canMain.width,canMain.height); 
@@ -92,7 +89,7 @@ function App() {
 
         <div className='FunctionalStyle'>
           <div className='HeaderInfo'>Functional</div>
-          
+
           <div className='SlidersFun'>
             <RangeFunctional name="Red" nmd={0}></RangeFunctional>
             <RangeFunctional name="Grean" nmd={1}></RangeFunctional>
@@ -101,7 +98,7 @@ function App() {
 
           <div className='ButtonFun'>
             <ButtonFunctional idv = "inversion" title = "Inversion" functional={inversion}/>
-            <ButtonFunctional idv = "blackAndWhite" title = "Not colour" functional={blackAndWhite}/>
+            <ButtonFunctional idv = "blackAndWhite" title = "Not color" functional={blackAndWhite}/>
           </div>
         </div>
 
@@ -109,12 +106,9 @@ function App() {
 
         <ExtractionImage></ExtractionImage>
 
-        <div className='grt'>
-          <div className='Save'>
-            <ButtonFunctional idv = "saveBut" title = "Save" functional={test}/>
-          </div>
-
-          <div className='Clear'>
+        <div className='FunctionalStyle'>
+          <div className='ButtonFun'>
+            <ButtonFunctional idv = "saveBut" title = "Save" functional={save}/>
             <ButtonFunctional idv = "saveClear" title = "Clear" functional={clear}/>
           </div>
         </div>

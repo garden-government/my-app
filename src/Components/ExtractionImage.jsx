@@ -6,14 +6,17 @@ const ExtractionImage = () => {
 
     function pow(number, stepen){
         let result = 1;
+
         for (let i = 0; i < stepen; i++){
             result *= number;
         }
+
         return result;
     }
     
     function numberToBinary(number){
         let result = new Array();
+
         for(let i = 7; i >= 0; i--){
             if ((number - pow(2,i))>= 0){
                 result[i] = "1";
@@ -23,25 +26,30 @@ const ExtractionImage = () => {
                 result[i] = "0";
             }
         }
+
         return result;
     }
     
     function binaryToNumber(binaryNumber){
         let result = 0;
+
         for(let i in binaryNumber){
             if (binaryNumber[i] == "1"){
                 result+= pow(2,i)
             }
         }
+
         return result;
     }
 
     function takeLastBit(number, last){
         let arrNumber = numberToBinary(number);
         let arrNumberResult = numberToBinary(0);
+
         for (let i = 0; i < last; i++){
             arrNumberResult[7 - i] = arrNumber[i] ;
         }
+
         return binaryToNumber(arrNumberResult)
     }
 
@@ -67,13 +75,14 @@ const ExtractionImage = () => {
     return (
         <div className='ExtractionImage'>
             <div className='HeaderInfo'>Extraction image</div>
-          <div>
-            <label>Select number of bytes</label>
-            <input  className="slider"  type= "range" id= "byteForExtraction" min={0} max={8} step={1}
-             value ={byte} onChange = {event => setByte(event.target.value)}></input>
-          </div>
 
-          <button id= "extractionImageBut" onClick={ExtractionImage}>Extraction</button>
+            <div>
+                <label>Select number of bytes</label>
+                <input  className="slider"  type= "range" id= "byteForExtraction" min={0} max={8} step={1}
+                 value ={byte} onChange = {event => setByte(event.target.value)}></input>
+            </div>
+
+            <button id= "extractionImageBut" onClick={ExtractionImage}>Extraction</button>
         </div>
     );
 };

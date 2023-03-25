@@ -8,7 +8,6 @@ const LoadMainImage = () => {
         let reader = new FileReader();
         
         reader.onload = function(){
-            
           loadImage(reader.result, "mainCanvas");
           loadImage(reader.result, "helpCanvas");
         }
@@ -27,7 +26,6 @@ const LoadMainImage = () => {
         
         img.onload = function () {
           const can = document.getElementById(idCanvas);
-      
           const ctx = can.getContext("2d");
 
           if (img.width>1000){
@@ -38,7 +36,6 @@ const LoadMainImage = () => {
             can.width = img.width;
             can.height = img.height;
           }
-
       
           ctx.drawImage(img,0,0,can.width,can.height);
         }
